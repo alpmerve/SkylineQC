@@ -20,14 +20,13 @@ library(stringr)
 library(broom)
 
 #setting working directory --> where the input csv file is
-setwd("~/Desktop/Projects/Other projects/Skyline UGM/") 
 
 #Importing csv file and modifying column names
 data              <- read.csv(file= "MSstats_for_Merve_UGM.csv", header=TRUE, sep=",", stringsAsFactors = F, as.is = T, dec = ".")
-data$File.Name    <- gsub(pattern = "^[^_]*_", replacement = "",  data$File.Name)###optional ##removes the date (YY.MM.DD_) from the file name
-data$File.Name    <- gsub(pattern = "\\..*",   replacement = "",  data$File.Name)##removes .wiff extension
-data$File.Name    <- gsub(pattern = "_",       replacement = ".", data$File.Name)###optional  ##Puts dots as seperator instead of underscores
-data$Condition    <- gsub(pattern = "_",       replacement = ".", data$Condition)###optional  ##Puts dots as seperator instead of underscores
+#data$File.Name    <- gsub(pattern = "^[^_]*_", replacement = "",  data$File.Name)###optional ##removes the date (YY.MM.DD_) from the file name
+#data$File.Name    <- gsub(pattern = "\\..*",   replacement = "",  data$File.Name)##removes .wiff extension
+#data$File.Name    <- gsub(pattern = "_",       replacement = ".", data$File.Name)###optional  ##Puts dots as seperator instead of underscores
+#data$Condition    <- gsub(pattern = "_",       replacement = ".", data$Condition)###optional  ##Puts dots as seperator instead of underscores
 data$Protein.Name <- gsub(pattern = "^.*\\|",  replacement = "",  data$Protein.Name)###should be modified depending on how protein name look like
 
 
